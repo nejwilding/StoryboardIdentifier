@@ -1,8 +1,10 @@
-//: Playground - noun: a place where people can play
 
 import UIKit
 
-// MARK: - Storyboard Identifier
+/*:
+# Storyboard Identifier Protocol
+Storyboard identifier protocol for typesafe storyboard identities
+*/
 
 protocol StoryboardIdentifiable {
     static var storyboardIdentifier: String { get }
@@ -15,9 +17,11 @@ extension StoryboardIdentifiable where Self: UIViewController {
     }
 }
 
-// MARK: - UIViewController Extension
-
 extension UIViewController: StoryboardIdentifiable { }
+
+/*:
+Storyboard Extension, we create an instantiate function to use with a view controller
+*/
 
 extension UIStoryboard {
     
@@ -43,7 +47,9 @@ extension UIStoryboard {
     
 }
 
-// MARK: - Possible usage
+/*:
+Example usage of Storyboard Identifier Protocol and instantiate extension
+*/
 
 class TestViewController: UIViewController { }
 
